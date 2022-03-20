@@ -34,7 +34,9 @@ from pathlib import Path
 import os
 import subprocess
 from youtube_dl import YoutubeDL
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use('TkAgg')
 import numpy as np
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(message)s')
@@ -222,18 +224,35 @@ class QawalRang:
         filteredArtistMap = {key:val for key, val in artistMap.items() if key is 'others' or val != 1}
         artistNames = filteredArtistMap.keys()
         artistCount = filteredArtistMap.values()
+        artistCountStr = [str(c) for c in artistCount]
         print(artistNames)
         print(artistCount)
         artistColors = plt.get_cmap('plasma')(np.linspace(0.25, 0.95), len(artistNames))
         artistAxis = np.arange(len(filteredArtistMap))
+        plt.rcParams.update({'font.size': 18})
         fig2 = plt.figure(figsize=(10,8))
         axes2 = fig2.add_subplot(111)
-        axes2.barh(artistAxis, artistCount, align='center')
+        aRects = axes2.barh(artistAxis, artistCount, align='center', color='black', tick_label=artistCountStr)
         axes2.set_yticks(artistAxis)
         axes2.set_yticklabels(artistNames)
         axes2.invert_yaxis()
         axes2.set_xlabel('Number of songs')
-        axes2.set_title('QawalRang: Artist map')
+        axes2.set_title('QawalRang: Artist Map')
+        plt.rcParams.update({'font.size': 14})
+        for rect in aRects:
+            width = int(rect.get_width())
+            widthStr = str(width)
+            yloc = rect.get_y() + rect.get_height() / 2
+            if width > 20:
+                xpos = width + 1.25
+            elif width > 10:
+                xpos = width + 1
+            else:
+                xpos = width + 0.75
+            axes2.annotate(widthStr, xy=(xpos, yloc), xytext=(0, 0),
+                textcoords="offset points", ha='right', va='center', color='black')
+
+        plt.grid()
         plt.tight_layout()
         plt.savefig(QawalRang.QawalRangArtists)
         plt.close(fig2)

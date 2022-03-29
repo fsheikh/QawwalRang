@@ -222,11 +222,18 @@ class QawalRang:
 
         # copy dictionary while removing artist with single song to their credit
         filteredArtistMap = {key:val for key, val in artistMap.items() if key is 'others' or val != 1}
+        print(filteredArtistMap)
         artistNames = filteredArtistMap.keys()
-        artistCount = filteredArtistMap.values()
+        artistCount = list(filteredArtistMap.values())
+        artistCount.sort()
+        print(artistCount)
         artistCountStr = [str(c) for c in artistCount]
         print(artistNames)
         print(artistCount)
+        # TODO: Hack to put the name in manually, can't seem to sort the dictionary
+        sortedArtistNames = ['munshi raziuddin', 'fanna fi-allah', 'aziz mian qawal', 'ahmad hassan akhtar', 'amjad sabri', 'akhtar shareef',
+                            'bahauddin khan', 'farid ayaz abu-muhammad', 'ameer ali khan', 'faiz ali faiz', 'sher mehar ali', 'badar miandad khan',
+                            'maulvi haider hassan', 'others', 'nusrat fateh ali khan']
         artistColors = plt.get_cmap('plasma')(np.linspace(0.25, 0.95), len(artistNames))
         artistAxis = np.arange(len(filteredArtistMap))
         plt.rcParams.update({'font.size': 18})
@@ -234,7 +241,7 @@ class QawalRang:
         axes2 = fig2.add_subplot(111)
         aRects = axes2.barh(artistAxis, artistCount, align='center', color='black', tick_label=artistCountStr)
         axes2.set_yticks(artistAxis)
-        axes2.set_yticklabels(artistNames)
+        axes2.set_yticklabels(sortedArtistNames)
         axes2.invert_yaxis()
         axes2.set_xlabel('Number of songs')
         axes2.set_title('QawalRang: Artist Map')
@@ -243,14 +250,8 @@ class QawalRang:
             width = int(rect.get_width())
             widthStr = str(width)
             yloc = rect.get_y() + rect.get_height() / 2
-            if width > 20:
-                xpos = width + 1.25
-            elif width > 10:
-                xpos = width + 1
-            else:
-                xpos = width + 0.75
-            axes2.annotate(widthStr, xy=(xpos, yloc), xytext=(0, 0),
-                textcoords="offset points", ha='right', va='center', color='black')
+            axes2.annotate(widthStr, xy=(width - 0.2, yloc), xytext=(0, 0),
+                textcoords="offset points", ha='right', va='center', color='white')
 
         plt.grid()
         plt.tight_layout()

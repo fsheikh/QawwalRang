@@ -29,8 +29,10 @@ from enum import Enum
 from pathlib import Path
 import logging
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+matplotlib.use('TkAgg')
 
 import librosa as rosa
 import librosa.display as disp
@@ -427,7 +429,7 @@ class QDetect:
             taaliD = QDetect.isTaali(mfccTaali, taaliParam)
             if tablaD == Decision.YES and taaliD == Decision.YES:
                 counters['both'] = counters['both'] + 1
-                #logger.info("{} categorized as Qawali after detecting tabla and taali".format(song))
+                logger.info("{} categorized as Qawali after detecting tabla and taali".format(song))
             elif tablaD == Decision.YES and taaliD == Decision.MAYBE:
                 counters[QDetect.TABLA_SUFFIX] = counters[QDetect.TABLA_SUFFIX] + 1
                 #logger.info("{} categorized as Qawali after detecting tabla and suspecting taali".format(song))
@@ -537,8 +539,9 @@ if __name__ == '__main__':
     # plot results for various cases, by changing one parameter at a time and keeping
     # others fixed
     else:
-        case = "None"
+        case = "Genre"
 
+        plt.rcParams.update({'font.size': 14})
         if case == "Edge":
             edgeAccuracy=[]
             edgeFscore=[]
@@ -553,11 +556,11 @@ if __name__ == '__main__':
                 edgeRecall.append(r[2])
                 edgePrecision.append(r[3])
             edgeFig = plt.figure(figsize=(10,8))
-            plt.title('Tabla CQT power: Impact of edge note')
-            plt.plot(edges, edgeAccuracy, 'b-o', label="Accuracy")
-            plt.plot(edges, edgeFscore, 'k-v', label="F-Score")
-            plt.plot(edges, edgeRecall, 'r-8', label='Recall')
-            plt.plot(edges, edgePrecision, 'm-s', label='Precision')
+            plt.title('Tabla Detection: Impact of edge note')
+            plt.plot(edges, edgeAccuracy, 'b-o', label="Accuracy", linewidth=2.5)
+            plt.plot(edges, edgeFscore, 'k-v', label="F-Score", linewidth=2.5)
+            plt.plot(edges, edgeRecall, 'r-8', label='Recall', linewidth=2.5)
+            plt.plot(edges, edgePrecision, 'm-s', label='Precision', linewidth=2.5)
             plt.xlabel('Midi-notes in third octave')
             plt.legend()
             plt.grid(True)
@@ -579,12 +582,12 @@ if __name__ == '__main__':
                 o3Recall.append(r[2])
                 o3Precision.append(r[3])
             o3Fig = plt.figure(figsize=(10,8))
-            plt.title('Tabla CQT power: Impact of spread in third octave')
-            plt.plot(o3s, o3Accuracy, 'b-o', label="Accuracy")
-            plt.plot(o3s, o3Fscore, 'k-v', label="F-Score")
-            plt.plot(o3s, o3Recall, 'r-8', label="Recall")
+            plt.title('Tabla Detection: Impact of CQT energy spread in 3rd octave')
+            plt.plot(o3s, o3Accuracy, 'b-o', label="Accuracy", linewidth=2.5)
+            plt.plot(o3s, o3Fscore, 'k-v', label="F-Score", linewidth=2.5)
+            plt.plot(o3s, o3Recall, 'r-8', label="Recall", linewidth=2.5)
             plt.plot(o3s, o3Precision, 'm-s', label='Precision')
-            plt.xlabel('Std. deviation of Tabla CQT power in third octave')
+            plt.xlabel('Std. deviation of Tabla CQT energy in third octave')
             plt.legend()
             plt.grid(True)
             plt.tight_layout()
@@ -605,12 +608,12 @@ if __name__ == '__main__':
                 o4Precision.append(r[3])
 
             o4Fig = plt.figure(figsize=(10,8))
-            plt.title('Tabla CQT power: Impact of spread in fourth octave')
-            plt.plot(o4s, o4Accuracy, 'b-o', label="Accuracy")
-            plt.plot(o4s, o4Fscore, 'k-v', label="F-Score")
-            plt.plot(o4s, o4Recall, 'r-8', label='Recall')
-            plt.plot(o4s, o4Precision, 'm-s', label='Precision')
-            plt.xlabel('Std.deviation of CQT power in fourth octave')
+            plt.title('Tabla Detection: Impact of CQT energy spread in 4th octave')
+            plt.plot(o4s, o4Accuracy, 'b-o', label="Accuracy", linewidth=2.5)
+            plt.plot(o4s, o4Fscore, 'k-v', label="F-Score", linewidth=2.5)
+            plt.plot(o4s, o4Recall, 'r-8', label='Recall', linewidth=2.5)
+            plt.plot(o4s, o4Precision, 'm-s', label='Precision', linewidth=2.5)
+            plt.xlabel('Std.deviation of Tabla CQT energy in fourth octave')
             plt.legend()
             plt.grid(True)
             plt.tight_layout()
@@ -627,15 +630,21 @@ if __name__ == '__main__':
 
             # add qawali accuracy results
             qRet = qGenre.classify(None, (MidiNote.F3, TablaO3.D4, TablaO4.D14))
-            genreAccuracy['qawali'] = 100 * qRet['Q'] / qRet['total']
+            genreAccuracy['qawwali'] = 100 * qRet['Q'] / qRet['total']
             items = np.arange(len(genreAccuracy))
+            barColors = ['black' if item != 10 else 'blue' for item in items]
             genreFig = plt.figure(figsize=(10,8))
-            plt.title('Accuracy of qawali detector per Genre')
-            barList = plt.bar(items, list(genreAccuracy.values()))
-            for elem in barList:
-                elem.set_color('b')
+            axes = genreFig.add_subplot(111)
+            plt.title('Qawwali detector: Accuracy % per Genre')
+            barList = plt.barh(items, list(genreAccuracy.values()), align='center', color=barColors,
+                tick_label=list(genreAccuracy.keys()))
+            for rect in barList:
+                width = int(rect.get_width())
+                widthStr = str(width) + '%'
+                ypos = rect.get_y() + rect.get_height() / 2
+                axes.annotate(widthStr, xy=(width, ypos), xytext=(0,0),
+                    textcoords="offset points", ha='right', va='center', color='white')
             plt.grid(True)
-            plt.xticks(items, tuple(genreAccuracy.keys()), rotation=70)
             plt.savefig('genreA.png')
 
         if case == "Taali":

@@ -1,0 +1,1 @@
+This folder contains an article written with TISMIR latex [style](https://github.com/ismir/paper_templates/tree/master/TISMIR) describing the work done in this project. Includes original images and bibliography.

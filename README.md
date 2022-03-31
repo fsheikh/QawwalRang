@@ -1,5 +1,5 @@
 # QawwalRang
-Qawwali songs dataset with a genre classifier
+An audio dataset for genre recognition of Qawwali
 
 # Contents
 

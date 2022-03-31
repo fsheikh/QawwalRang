@@ -632,12 +632,19 @@ if __name__ == '__main__':
             qRet = qGenre.classify(None, (MidiNote.F3, TablaO3.D4, TablaO4.D14))
             genreAccuracy['qawwali'] = 100 * qRet['Q'] / qRet['total']
             items = np.arange(len(genreAccuracy))
-            barColors = ['black' if item != 10 else 'blue' for item in items]
             genreFig = plt.figure(figsize=(10,8))
             axes = genreFig.add_subplot(111)
             plt.title('Qawwali detector: Accuracy % per Genre')
-            barList = plt.barh(items, list(genreAccuracy.values()), align='center', color=barColors,
-                tick_label=list(genreAccuracy.keys()))
+            accuracyList = list(genreAccuracy.values())
+            accuracyList.sort()
+            # can't seem to align dictionary keys after sorting with respect to values
+            genreNames = ['classical', 'qawwali', 'blues', 'country', 'jazz', 'rock', 'metal', 'reagge',
+                          'pop', 'hiphop', 'disco']
+            if (set(genreNames) != set(genreAccuracy.keys())):
+                logger.fatal("Genre names do not match the expected set")
+            barColors = ['green' if item == 1 else 'black' for item in items]
+            barList = plt.barh(items, accuracyList, align='center', color=barColors,
+                tick_label=genreNames)
             for rect in barList:
                 width = int(rect.get_width())
                 widthStr = str(width) + '%'

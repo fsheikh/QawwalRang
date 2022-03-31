@@ -3,7 +3,7 @@ An audio dataset for genre recognition of Qawwali
 
 # Contents
 
-- data: Collection of 72 one-minutes duration [Qawwali]() songs. Format is mono with 44100Hz as sampling rate
+- data: Collection of 72 one-minutes duration [Qawwali](https://www.britannica.com/art/qawwali) [songs](blob/data/qawwalrang.tar.bz2). Format is mono with sample rate 44100 Hz
 - metadata: JSON formatted schema and metadata file describing Qawwal rang dataset, like song name, artist and URL
 - src: Two python3 programs one to (rebuild) dataset from metadata file and another program to classify songs as Qawwali genre.
 - article: Documentation with motivation, description and results from this work
@@ -56,3 +56,8 @@ optional arguments:
                         other genre
 
 ```
+
+# Results
+
+Qawwali recognition including GTZAN [dataset](http://marsyas.info/downloads/datasets.html)
+![Genre recognition results](article/genreA.png)

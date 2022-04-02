@@ -539,7 +539,7 @@ if __name__ == '__main__':
     # plot results for various cases, by changing one parameter at a time and keeping
     # others fixed
     else:
-        case = "Genre"
+        case = "Taali"
 
         plt.rcParams.update({'font.size': 14})
         if case == "Edge":
@@ -669,7 +669,7 @@ if __name__ == '__main__':
                 tPrecision.append(r[3])
 
             tFig = plt.figure(figsize=(10,8))
-            plt.title('Qawali classification: Impact of Taali MFCC')
+            plt.title('Taali Detection: Impact of MFCC extrema')
             width = 0.2
             plt.bar([e - width for e in tX], tAccuracy, width=width, label='Accuracy')
             plt.bar([e for e in tX], tFscore, width=width, label='F-Score')

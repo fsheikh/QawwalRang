@@ -1,6 +1,8 @@
 # QawwalRang
 An audio dataset for genre recognition of Qawwali
 
+[![DOI](https://zenodo.org/badge/471473558.svg)](https://zenodo.org/badge/latestdoi/471473558)
+
 # Contents
 
 - data: Collection of 72 one-minutes duration [Qawwali](https://www.britannica.com/art/qawwali) [songs](blob/data/qawwalrang.tar.bz2). Format is mono with sample rate 44100 Hz

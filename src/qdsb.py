@@ -243,9 +243,9 @@ class QawalRang:
         axes2.set_yticks(artistAxis)
         axes2.set_yticklabels(sortedArtistNames)
         axes2.invert_yaxis()
-        axes2.set_xlabel('Number of songs')
-        axes2.set_title('QawalRang: Artist Map')
         plt.rcParams.update({'font.size': 14})
+        axes2.set_xlabel('Number of songs')
+        axes2.set_title('QawwalRang Artists/Performers')
         for rect in aRects:
             width = int(rect.get_width())
             widthStr = str(width)

@@ -7,7 +7,10 @@
       "artist" : "maulvi haider hassan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "pahari",
+      "taal": "dadra"
     },
     {
       "fid": "q002",
@@ -16,7 +19,10 @@
       "artist": "maulvi haider hassan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unkown",
+      "taal": "unknown"
     },
     {
       "fid": "q003",
@@ -25,7 +31,10 @@
       "artist" : "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q004",
@@ -34,7 +43,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q005",
@@ -43,7 +55,10 @@
       "artist": "maulvi haider hassan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "kafi",
+      "taal": "gehrwa"
     },
     {
       "fid": "q006",
@@ -52,7 +67,10 @@
       "artist": "dildar abrar hussain",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "patdeep",
+      "taal": "gehrwa"
     },
     {
       "fid": "q007",
@@ -61,7 +79,10 @@
       "artist": "munshi raziuddin",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Asaawari",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q008",
@@ -70,7 +91,10 @@
       "artist": "sabri brothers",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q009",
@@ -79,7 +103,10 @@
       "artist": "maulvi haider hassan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "megh",
+      "taal": "gehrwa"
     },
     {
       "fid": "q010",
@@ -88,7 +115,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "pilo",
+      "taal": "gehrwa"
     },
     {
       "fid": "q011",
@@ -97,7 +127,10 @@
       "artist" : "bahauddin khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q012",
@@ -106,7 +139,10 @@
       "artist": "bahauddin khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "patdeep",
+      "taal": "dadra"
     },
     {
       "fid": "q013",
@@ -115,7 +151,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q014",
@@ -124,7 +163,10 @@
       "artist" : "farid ayaz abu-muhammad",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "unknown",
+      "taal": "dadrah"
     },
     {
       "fid": "q015",
@@ -133,7 +175,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "pahaari",
+      "taal": "gehrwa"
     },
     {
       "fid": "q016",
@@ -142,7 +187,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q017",
@@ -151,7 +199,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa-ghazal"
     },
     {
       "fid": "q018",
@@ -160,7 +211,10 @@
       "artist": "munshi raziuddin",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q019",
@@ -169,7 +223,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Behrvi",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q020",
@@ -178,7 +235,10 @@
       "artist": "farid ayaz abu-muhammad",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Asawari",
+      "raag": "unknown",
+      "taal": "teentaal"
     },
     {
       "fid": "q021",
@@ -187,7 +247,10 @@
       "artist": "bahauddin khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q022",
@@ -196,7 +259,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q023",
@@ -205,7 +271,10 @@
       "artist": "ameer ali khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "dadra"
     },
     {
       "fid": "q024",
@@ -214,7 +283,10 @@
       "artist": "fanna fi-allah",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q025",
@@ -223,7 +295,10 @@
       "artist": "bakhshi salamat khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "dadra"
     },
     {
       "fid": "q026",
@@ -232,7 +307,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kalyaan",
+      "raag": "unknown",
+      "taal": "gehrwa-qawaali"
     },
     {
       "fid": "q027",
@@ -241,7 +319,10 @@
       "artist": "aziz mian qawal",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q028",
@@ -250,7 +331,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-ghazal"
     },
     {
       "fid": "q029",
@@ -259,7 +343,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q030",
@@ -268,7 +355,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q031",
@@ -277,7 +367,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q032",
@@ -286,7 +379,10 @@
       "artist": "ahmad hassan akhtar",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Behrvi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q033",
@@ -295,7 +391,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "dadra"
     },
     {
       "fid": "q034",
@@ -304,7 +403,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q035",
@@ -313,7 +415,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q036",
@@ -322,7 +427,10 @@
       "artist": "tauqeer khurram ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q037",
@@ -331,7 +439,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q038",
@@ -340,7 +451,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q039",
@@ -349,7 +463,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q040",
@@ -358,7 +475,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q041",
@@ -367,7 +487,10 @@
       "artist": "amjad sabri",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q042",
@@ -376,7 +499,10 @@
       "artist": "farid ayaz abu-muhammad",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "unknown",
+      "taal": "dadra"
     },
     {
       "fid": "q043",
@@ -385,7 +511,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q044",
@@ -394,7 +523,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q045",
@@ -403,7 +535,10 @@
       "artist": "ameer ali khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q046",
@@ -412,7 +547,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q047",
@@ -421,7 +559,10 @@
       "artist": "fanna fi-allah",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q048",
@@ -430,7 +571,10 @@
       "artist": "ahmad hassan akhtar",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q049",
@@ -439,7 +583,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q050",
@@ -448,7 +595,10 @@
       "artist": "ameer ali khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q051",
@@ -457,7 +607,10 @@
       "artist": "akhtar shareef",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q052",
@@ -466,7 +619,10 @@
       "artist": "akhtar shareef",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
       "fid": "q053",
@@ -475,7 +631,10 @@
       "artist": "faiz ali faiz",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q054",
@@ -484,7 +643,10 @@
       "artist": "maulvi haider hassan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "unknown",
+      "taal": "gehrwa"
 
     },
     {
@@ -494,7 +656,10 @@
       "artist": "badar miandad khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q056",
@@ -503,7 +668,10 @@
       "artist": "badar miandad khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bherun",
+      "raag": "unknown",
+      "taal": "gehrwa"
 
     },
     {
@@ -513,7 +681,10 @@
       "artist": "sher miandad khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q058",
@@ -522,8 +693,10 @@
       "artist": "faiz ali faiz",
       "download": true,
       "start": 0,
-      "duration": 60
-
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
 
@@ -533,7 +706,10 @@
       "artist": "aziz mian qawal",
       "download": true,
       "start": 60,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "unknown"
     },
     {
 
@@ -543,7 +719,10 @@
       "artist": "badar miandad khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "shankra",
+      "taal": "gehrwa"
     },
     {
 
@@ -553,7 +732,10 @@
       "artist": "badar miandad khan",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q062",
@@ -562,7 +744,10 @@
       "artist": "nusrat fateh ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Asawari",
+      "raag": "unknown",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q063",
@@ -571,7 +756,10 @@
       "artist": "amjad sabri",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "pilo",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q064",
@@ -580,7 +768,10 @@
       "artist": "sher mehar ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q065",
@@ -589,7 +780,10 @@
       "artist": "sher mehar ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bherun(Bhairav)",
+      "raag": "bairagi",
+      "taal": "gehrwa"
     },
     {
       "fid": "q066",
@@ -598,7 +792,10 @@
       "artist": "sher mehar ali",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q067",
@@ -607,7 +804,10 @@
       "artist": "aziz ahmad warsi",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Unknown",
+      "raag": "unknown",
+      "taal": "dadra"
     },
     {
       "fid": "q068",
@@ -616,7 +816,10 @@
       "artist": "nusrat fateh ali",
       "download": true,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kafi",
+      "raag": "megh",
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q069",
@@ -625,7 +828,10 @@
       "artist": "manzoor santoo",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "unknown",
+      "taal": "gehrwa"
     },
     {
       "fid": "q070",
@@ -634,7 +840,10 @@
       "artist": "faiz ali faiz",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Kalyan",
+      "raag": "bhopali",
+      "taal": "gehrwa"
     },
     {
       "fid": "q071",
@@ -643,7 +852,10 @@
       "artist": "faryad ali khan",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bilawal",
+      "raag": "pahaari",
+      "taal": "gehrwa"
     },
     {
       "fid": "q072",
@@ -652,7 +864,10 @@
       "artist": "asif santoo",
       "download": false,
       "start": 0,
-      "duration": 60
+      "duration": 60,
+      "thaat": "Bhervi",
+      "raag": "unknown",
+      "taal": "gehrwa"
     }
   ]
 }

@@ -48,9 +48,24 @@
                     "download" : {
                         "type": "boolean",
                         "description": "Whether this song should be downloaded"
+                    },
+                    "thaat" : {
+                        "type": "string",
+                        "description": "Parent scale used in this song",
+                        "pattern": "[A-Za-z]*"
+                    },
+                    "raag" : {
+                        "type": "string",
+                        "description": "Unique melodic structure identifying the composition",
+                        "pattern": "[A-Za-z]*"
+                    },
+                    "taal" : {
+                        "type": "string",
+                        "description": "Unique beat structure identifying the rhythm",
+                        "pattern": "[A-Za-z]*"
                     }
                 },
-                "required": ["fid", "name", "url"]
+                "required": ["fid", "name", "url", "thaat", "taal"]
             }
         }
     },

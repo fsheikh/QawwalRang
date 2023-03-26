@@ -281,7 +281,7 @@ class QawalRang:
 
         # plot musical properties
         thaats, raags, taals = self.__extract_musical_info()
-        plt.rcParams.update({'font.size': 12})
+        plt.rcParams.update({'font.size': 10})
         fig3 = plt.figure(figsize=(10,8))
         axes3 = fig3.add_subplot(311)
         thaatColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(thaats))
@@ -301,6 +301,7 @@ class QawalRang:
         plt.grid()
         plt.tight_layout()
 
+        plt.rcParams.update({'font.size': 8})
         axes4 = fig3.add_subplot(312)
         RaagColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(raags))
         RaagAxis = np.arange(len(raags))
@@ -319,6 +320,8 @@ class QawalRang:
 
         plt.grid()
         plt.tight_layout()
+
+        plt.rcParams.update({'font.size': 10})
         axes5 = fig3.add_subplot(313)
         TaalColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(taals))
         TaalAxis = np.arange(len(taals))

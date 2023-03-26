@@ -63,5 +63,8 @@ optional arguments:
 - Artist Map
 ![Artist distribution](article/artist.png)
 
+- Musical properties of dataset
+![Thaat/Raag/Taal distribution](props.png)
+
 - Qawwali recognition against GTZAN [dataset](http://marsyas.info/downloads/datasets.html)
 ![Genre recognition results](article/genreA.png)

@@ -59,6 +59,8 @@ class QawalRang:
     QawalRangSources = 'sources.png'
     # Artist chart
     QawalRangArtists = 'artist.png'
+    # Musical properties chart
+    QawalRangProps = 'props.png'
     # Number of songs sourced from web (TODO code into metadata, not expected to change though)
     WebSize = 6
     def  __init__(self, target_path, metadata_file, offline_location=None):
@@ -177,6 +179,25 @@ class QawalRang:
     def clean(self):
         logger.info("Deleting all songs from location {}".format(self.m_target))
 
+    # Returns a tuple of maps with distribution of thaat,raag and taal
+    def __extract_musical_info(self):
+        thaatSet = { qawali['thaat'] for qawali in self.m_qmap['qawalian'] }
+        raagSet = { qawali['raag'] for qawali in self.m_qmap['qawalian'] }
+        taalSet = { qawali['taal'] for qawali in self.m_qmap['qawalian'] }
+
+        thaats = {x : 0 for x in thaatSet }
+        raags = {x : 0 for x in raagSet }
+        taals = {x: 0 for x in taalSet }
+        for qawali in self.m_qmap['qawalian']:
+            currentThaat = qawali['thaat']
+            currentRaag = qawali['raag']
+            currentTaal = qawali['taal']
+            thaats[currentThaat] = thaats[currentThaat] + 1
+            raags[currentRaag] = raags[currentRaag] + 1
+            taals[currentTaal] = taals[currentTaal] + 1
+
+        return (thaats, raags, taals)
+
     # Reports statistics from data-set
     def info(self):
         logger.info("Extracting information from dataset {}".format(self.m_target))
@@ -185,12 +206,12 @@ class QawalRang:
         qawaliSizes = [0, -QawalRang.WebSize, QawalRang.WebSize]
         sourceColors = plt.get_cmap('magma')(np.linspace(0.25, 0.75, len(sourceLabels)))
         songsAnalysed = 0
-        # map to chart arstit distribution
+        # map to chart artist distribution
         artistMap = {}
         for qawali in self.m_qmap['qawalian']:
             qPath = self.m_target / qawali['fid']
             if not qPath.with_suffix(QawalRang.InFormat).exists():
-                logger.info("Song {} not part of dataset? will NOT be included in statistics".format(qawali['id']))
+                logger.info("Song {} not part of dataset? will NOT be included in statistics".format(qawali['fid']))
             else:
                 songsAnalysed = songsAnalysed + 1
                 if 'youtube' in qawali['url']:
@@ -221,7 +242,7 @@ class QawalRang:
                 artistMap['others'] = artistMap['others'] + 1
 
         # copy dictionary while removing artist with single song to their credit
-        filteredArtistMap = {key:val for key, val in artistMap.items() if key is 'others' or val != 1}
+        filteredArtistMap = {key:val for key, val in artistMap.items() if key == 'others' or val != 1}
         print(filteredArtistMap)
         artistNames = filteredArtistMap.keys()
         artistCount = list(filteredArtistMap.values())
@@ -257,6 +278,68 @@ class QawalRang:
         plt.tight_layout()
         plt.savefig(QawalRang.QawalRangArtists)
         plt.close(fig2)
+
+        # plot musical properties
+        thaats, raags, taals = self.__extract_musical_info()
+        plt.rcParams.update({'font.size': 12})
+        fig3 = plt.figure(figsize=(10,8))
+        axes3 = fig3.add_subplot(311)
+        thaatColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(thaats))
+        thaatAxis = np.arange(len(thaats))
+        print(thaats.keys())
+        axes3.set_title('Thaat distribution')
+        aRects = axes3.barh(thaatAxis, list(thaats.values()), align='center', color='black', tick_label=str(thaats.keys()))
+        axes3.set_yticks(thaatAxis)
+        axes3.set_yticklabels(thaats.keys())
+        axes3.invert_yaxis()
+        for rect in aRects:
+            width = int(rect.get_width())
+            widthStr = str(width)
+            yloc = rect.get_y() + rect.get_height() / 2
+            axes3.annotate(widthStr, xy=(width - 0.2, yloc), xytext=(0, 0),
+                textcoords="offset points", ha='right', va='center', color='white')
+        plt.grid()
+        plt.tight_layout()
+
+        axes4 = fig3.add_subplot(312)
+        RaagColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(raags))
+        RaagAxis = np.arange(len(raags))
+        aRects = axes4.barh(RaagAxis, list(raags.values()), align='center', color='black', tick_label=str(raags.keys()))
+        axes4.set_yticks(RaagAxis)
+        print(raags.keys())
+        axes4.set_yticklabels(raags.keys())
+        axes4.invert_yaxis()
+        axes4.set_title('Raag distribution')
+        for rect in aRects:
+            width = int(rect.get_width())
+            widthStr = str(width)
+            yloc = rect.get_y() + rect.get_height() / 2
+            axes4.annotate(widthStr, xy=(width - 0.2, yloc), xytext=(0, 0),
+                textcoords="offset points", ha='right', va='center', color='white')
+
+        plt.grid()
+        plt.tight_layout()
+        axes5 = fig3.add_subplot(313)
+        TaalColors = plt.get_cmap('inferno')(np.linspace(0.25, 0.95), len(taals))
+        TaalAxis = np.arange(len(taals))
+        aRects = axes5.barh(TaalAxis, list(taals.values()), align='center', color='black', tick_label=str(taals.keys()))
+        axes5.set_yticks(TaalAxis)
+        print(taals.keys())
+        axes5.set_yticklabels(taals.keys())
+        axes5.invert_yaxis()
+        axes5.set_xlabel('QawwalRang songs')
+        axes5.set_title('Taal distribution')
+        for rect in aRects:
+            width = int(rect.get_width())
+            widthStr = str(width)
+            yloc = rect.get_y() + rect.get_height() / 2
+            axes5.annotate(widthStr, xy=(width - 0.2, yloc), xytext=(0, 0),
+                textcoords="offset points", ha='right', va='center', color='white')
+
+        plt.grid()
+        plt.tight_layout()
+        plt.savefig(QawalRang.QawalRangProps)
+        plt.close(fig3)
 
     @staticmethod
     def download_progress(prog):

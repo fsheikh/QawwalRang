@@ -261,7 +261,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Kafi",
-      "raag": "unknown",
+      "raag": "kafi",
       "taal": "gehrwa"
     },
     {
@@ -296,8 +296,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Asawari",
+      "raag": "darbari",
       "taal": "dadra"
     },
     {
@@ -309,7 +309,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Kalyaan",
-      "raag": "unknown",
+      "raag": "Shudh-Kalyan",
       "taal": "gehrwa-qawaali"
     },
     {
@@ -320,8 +320,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Asawari",
+      "raag": "darbari",
       "taal": "gehrwa"
     },
     {
@@ -332,8 +332,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Bhairavi",
+      "raag": "bhairavi",
       "taal": "gehrwa-ghazal"
     },
     {
@@ -381,7 +381,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     },
     {
@@ -392,8 +392,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Khamaj",
-      "raag": "unknown",
+      "thaat": "Kafi",
+      "raag": "kafi",
       "taal": "dadra"
     },
     {
@@ -405,7 +405,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bilawal",
-      "raag": "unknown",
+      "raag": "bilawal",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -441,7 +441,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bilawal",
-      "raag": "unknown",
+      "raag": "bilawal",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -453,7 +453,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "chandarkaun",
+      "raag": "chandarjoyti",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -477,7 +477,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "unknown"
     },
     {
@@ -489,7 +489,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -501,7 +501,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "dadra"
     },
     {
@@ -513,7 +513,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -525,7 +525,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bilawal",
-      "raag": "unknown",
+      "raag": "bilawal",
       "taal": "gehrwa"
     },
     {
@@ -536,8 +536,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Khamaj",
-      "raag": "unknown",
+      "thaat": "Bilawal",
+      "raag": "kedar",
       "taal": "gehrwa"
     },
     {
@@ -549,7 +549,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "gehrwa"
     },
     {
@@ -597,7 +597,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "gehrwa"
     },
     {
@@ -608,8 +608,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Bhairav",
+      "raag": "bairagi",
       "taal": "gehrwa"
     },
     {
@@ -633,7 +633,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     },
     {
@@ -645,7 +645,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Kafi",
-      "raag": "unknown",
+      "raag": "kafi",
       "taal": "gehrwa"
 
     },
@@ -670,7 +670,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairav",
-      "raag": "unknown",
+      "raag": "chandarjoyti",
       "taal": "gehrwa"
 
     },
@@ -683,7 +683,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     },
     {
@@ -695,7 +695,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     },
     {
@@ -746,7 +746,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Asawari",
-      "raag": "unknown",
+      "raag": "jaunpuri",
       "taal": "gehrwa-qawwali"
     },
     {
@@ -770,7 +770,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
+      "raag": "khamaj",
       "taal": "gehrwa"
     },
     {
@@ -794,7 +794,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     },
     {
@@ -805,8 +805,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Asawari",
+      "raag": "kerwani",
       "taal": "dadra"
     },
     {
@@ -830,7 +830,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bilawal",
-      "raag": "unknown",
+      "raag": "bilawal",
       "taal": "gehrwa"
     },
     {
@@ -866,7 +866,7 @@
       "start": 0,
       "duration": 60,
       "thaat": "Bhairavi",
-      "raag": "unknown",
+      "raag": "bhairavi",
       "taal": "gehrwa"
     }
   ]

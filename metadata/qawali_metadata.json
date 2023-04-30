@@ -20,7 +20,7 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
+      "thaat": "Bilawal",
       "raag": "unknown",
       "taal": "unknown"
     },
@@ -44,8 +44,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Khamaj",
+      "raag": "khamaj",
       "taal": "unknown"
     },
     {
@@ -166,7 +166,7 @@
       "duration": 60,
       "thaat": "Kafi",
       "raag": "unknown",
-      "taal": "dadrah"
+      "taal": "dadra"
     },
     {
       "fid": "q015",
@@ -212,8 +212,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Kalyan",
+      "raag": "aiman",
       "taal": "unknown"
     },
     {
@@ -249,8 +249,8 @@
       "start": 0,
       "duration": 60,
       "thaat": "Khamaj",
-      "raag": "unknown",
-      "taal": "unknown"
+      "raag": "khamaj",
+      "taal": "gehrwa"
     },
     {
       "fid": "q022",
@@ -272,7 +272,7 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Khamaj",
+      "thaat": "Bilawal",
       "raag": "unknown",
       "taal": "dadra"
     },
@@ -284,7 +284,7 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
+      "thaat": "Kalyan",
       "raag": "unknown",
       "taal": "gehrwa"
     },
@@ -308,9 +308,9 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Kalyaan",
+      "thaat": "Kalyan",
       "raag": "Shudh-Kalyan",
-      "taal": "gehrwa-qawaali"
+      "taal": "gehrwa-qawwali"
     },
     {
       "fid": "q027",
@@ -416,9 +416,9 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
-      "taal": "unknown"
+      "thaat": "Bhairavi",
+      "raag": "bhairavi",
+      "taal": "gehrwa"
     },
     {
       "fid": "q036",
@@ -584,8 +584,8 @@
       "download": false,
       "start": 0,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Asawari",
+      "raag": "jaunpuri",
       "taal": "gehrwa"
     },
     {
@@ -707,8 +707,8 @@
       "download": true,
       "start": 60,
       "duration": 60,
-      "thaat": "Unknown",
-      "raag": "unknown",
+      "thaat": "Kafi",
+      "raag": "kafi",
       "taal": "unknown"
     },
     {

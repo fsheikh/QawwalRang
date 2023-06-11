@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Faheem Sheikh
+# Copyright (c) 2022-2023 Faheem Sheikh
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -157,7 +157,7 @@ TaaliParams = [(MidiNote.F3, TablaO3.D4, TablaO4.D14, TaaliExtrema.M5),
 # Objects of this class contain raw-data and features extracted from the songs
 # Supports member processing functions implementing heuristics for Qawali categorization
 class QDetect:
-    # Raw data stored on when saved on disk in numpy format
+    # Raw data stored on disk in numpy format
     RAW_DATA_FILE = 'songs-data.npy'
     EX_FEATURES_FILE = 'tt-features.npy'
     FEATURE_DIR = 'features'

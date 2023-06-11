@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Faheem Sheikh
+# Copyright (c) 2022-2023 Faheem Sheikh
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal

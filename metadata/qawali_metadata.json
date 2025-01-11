@@ -868,6 +868,30 @@
       "thaat": "Bhairavi",
       "raag": "bhairavi",
       "taal": "gehrwa"
-    }
+    },
+    {
+      "fid": "q073",
+      "name": "gardishon_kay_hain_maaray",
+      "url": "https://www.youtube.com/clip/UgkxnvB2UUBXuf10qPfMs9b6T4Fz0PC9MxtW",
+      "artist": "nusrat fateh ali",
+      "download": false,
+      "start": 0,
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "khamaj",
+      "taal": "gehrwa"
+    },
+    {
+      "fid": "q074",
+      "name": "ve_mahiya_teray_vekhan",
+      "url": "https://youtu.be/3D5IAZuH1TU?si=lG8SZq9scj-YOTKx",
+      "artist": "ameer ali khan",
+      "download": false,
+      "start": 0,
+      "duration": 60,
+      "thaat": "Khamaj",
+      "raag": "daes",
+      "taal": "gehrwa"
+    },
   ]
 }

@@ -1,9 +1,13 @@
 ### Qawwali recognition via computer vision AI
+import argparse
 from fastai.vision.all import *
+from fastai.tabular.all import *
+import dill
 import glob
 import logging
 import os
 import sys
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -11,9 +15,13 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 DataDir = "./data"
-ModelDir = "models"
-ModelName = "Resnet18Qawwali"
+ModelDir = "model"
+# ModelName = "Resnet18Qawwali"
+# ModelName = "Resnet18QawwaliLowFP"
+ModelName = "Resnet18QRetrain"
 ModelSuffix = ".pth"
+LearnerSuffix = ".pkl"
+FastAIInternalModel = False
 
 def get_label(path):
   #logger.info(f"label being returned {path.parent.name}")
@@ -67,37 +75,61 @@ def train_model(audioImagesArchive, train=False):
 
     if train:
         model.fit_one_cycle(10, 1e-3)
-
+        model.path = Path(os.getcwd()) / Path(ModelDir)
+        logger.info(f"Saving Model at {model.path / Path(ModelName+LearnerSuffix)}")
         model.save(ModelName)
-        logger.info(f"Model path: {model.path}/{model.model_dir}")
+        model.export(ModelName, pickle_module=dill)
     else:
-        model.load(Path(ModelName))
+        logger.info(f"path={model.path} directory={model.model_dir}")
+        # TODO: Parameterize to use the model from fastai internal path (need at least one training cycle)
+        if FastAIInternalModel:
+            model.load(Path(ModelName))
+        else:
+            # Load pre-trained model from a past training cycle (possibly on another machine)
+            model.path = Path(os.getcwd())
+            model.load(model.path / Path(ModelName))
 
     return model
 
 
+if __name__ == '__main__':
+    aParser = argparse.ArgumentParser(description="Qawwali inference via Resent")
+    aParser.add_argument("feature_dir", type=str, help="Directory containing images with MFCC/CQT plots")
+    aParser.add_argument("--reload", dest="reload", action="store_true", help="Reloads the neural network (needed to load the previous state)")
+    aParser.add_argument("--retrain", dest="retrain", action="store_true", help="Retrain the neural network (default will just run inference)")
 
-# Load pre-prepared audio images for loading into AI model
-audioImagesArchive = Path(os.path.abspath(DataDir + '/train/audio_images.tar.gz'))
-# Train a computer vision model
-model = train_model(audioImagesArchive, True)
-model.show_results()
-# Run model prediction/inference
-TestDir = DataDir + '/test/qawwali'
-TestFeatures = ['BehadRamzaan.png', 'NamiDaanam.png', 'MahiyaTrimmed.png', 'GardishonKaayMaaray.png']
-for feature in TestFeatures:
-    featureImgPath = Path(TestDir) / Path(feature)
-    logger.info(f"Running inference on {featureImgPath}")
-    fullDec, dec, modelPrediction = model.predict(featureImgPath)
-    logger.info(f"Model output: {modelPrediction} Decoded prediction: {fullDec}")
+    aArgs = aParser.parse_args()
 
-#learn.fine_tune(6)
-#learn.show_results()
-#learn.model = learn.model.cpu()
+    featureDirPath = Path(aArgs.feature_dir)
+    featureListing = list(featureDirPath.glob('**/*.png'))
+    if aArgs.reload:
+        # Pre-prepared audio images needed for recreating FastAI learn object
+        audioImagesArchive = Path(os.path.abspath(DataDir + '/train/audio_images.tar.gz'))
+        model = train_model(audioImagesArchive, False)
+        model.show_results()
+        for feature in featureListing:
+            logger.info(f"Running inference on {feature}")
+            fullDec, dec, modelPrediction = model.predict(feature)
+            logger.info(f"Model output: {modelPrediction} Decoded prediction: {fullDec}")
+    elif aArgs.retrain:
+        # Pre-prepared audio images needed for training
+        audioImagesArchive = Path(os.path.abspath(DataDir + '/train/audio_images.tar.gz'))
+        model = train_model(audioImagesArchive, True)
+        model.show_results()
+        for feature in featureListing:
+            logger.info(f"Running inference on {feature}")
+            fullDec, dec, modelPrediction = model.predict(feature)
+            logger.info(f"Model output: {modelPrediction} Decoded prediction: {fullDec}")
+    else:
+        # Run model prediction/inference
+        # For independent inference to work, "export" the model and then load it
+        # as a full learner object
+        # https://jss367.github.io/saving-and-loading-models-in-fastai.html
+        learnerPath = Path(os.getcwd()) / Path(ModelDir) / Path(ModelName+LearnerSuffix)
+        logger.info(f"Loading model from previous export {learnerPath}")
+        model = load_learner(learnerPath, cpu=True, pickle_module=dill)
+        for feature in featureListing:
+            logger.info(f"Running inference on {feature}")
+            fullDec, dec, modelPrediction = model.predict(feature)
+            logger.info(f"Model output: {modelPrediction} Decoded prediction: {fullDec}")
 
-#xb,yb = learn.dls.one_batch()
-#init_loss = learn.loss_func(learn.model(xb), yb)
-#learn.fit(10)
-#xb,yb = learn.dls.one_batch()
-#final_loss = learn.loss_func(learn.model(xb), yb)
-#assert final_loss < init_loss, (final_loss,init_loss)

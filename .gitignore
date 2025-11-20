@@ -138,4 +138,8 @@ dmypy.json
 *.gz
 
 # Data
-data/*.mp3
+*.mp3
+
+# ML files
+*.pth
+*.pkl

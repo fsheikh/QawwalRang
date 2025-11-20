@@ -1,1 +1,0 @@
-Audio features exported as images are available in this [tarball](https://drive.google.com/file/d/1rlgL3Io_HDycDjfnnN6H0-jbryeCUrsk/view?usp=drive_link). To avoid github file size limit, user needs to download manually and unpack in this directory

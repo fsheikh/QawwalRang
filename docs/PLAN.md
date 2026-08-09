@@ -3,7 +3,7 @@
 **Principal Investigator**: [Faheem Sheikh](fahim.sheikh@gmail.com)
 
 
-**Last Updated**: August 07, 2026
+**Last Updated**: August 08, 2026
 
 ## Background
 
@@ -41,18 +41,19 @@ A second contribution of this research proposal would be to find overlapping str
 To that end, this proposal would start from existing models trained exclusively on South Asian classical music to see how well they could learn Pakistani semi-classical music.
 It will then take the observations to foundation models trained on western music with the goal to find and explain intricate similarities between western and South Asian music.
 
-Overall, the project will attempt to evaluate the following hypotheses:
+## Hypotheses
+Overall, the project will investigate the following hypotheses:
 - Given excerpts from sub-genres of classical music popular in Pakistan, the existing AI models trained exclusively on Indian classical music are able to learn musical attributes like `raag`, `thaat` and `taal` with reasonable accuracy.
-- The semantic information from western music foundation models and South Asian musical models could be fused to find similarities in music structures independent of their origin. These similarities are explainable by the resulting model in a comprehensible way for an ordinary listener.
+- The semantic information from western music foundation models and South Asian musical models could be fused using a cross-attention mechanism to find overlapping structural patterns independent of their origin. These similarities are explainable by the resulting model in a comprehensible way for an ordinary listener.
 - A unified machine learning model could be built to automatically tag Pakistani semi-classical music without any degradation in tagging accuracy for popular western music.
 
 ## Objectives
 
 1. Construct a new dataset of Pakistani semi-classical music amenable for research dissemination under open source licensing. This data set will comprise short audio signals recorded from  scratch, converted from personal collections, or extracted from public music websites/portals after getting explicit license permissions.
-2. Evaluate state of the art machine learning foundation models trained on the above data set. Publish the findings in leading Music information retrieval conferences and gather feedback on results.
+2. Evaluate state of the art machine learning foundation models trained on the above data set with evaluation based on F1 scores for downstream individual classification tasks. Publish the findings in leading Music information retrieval conferences and gather feedback on results.
 3. Tune or extend with new layers the existing machine learning models to understand structural information of classical, semi-classical music with the aim of robust classification along raags, taals and sub-genre axes.
 4. Develop an efficient AI pipeline which enables a user to dynamically classify a musical piece, helps it find other similar musical items for listening, and generate user friendly information explaining the musical piece under evaluation.
-5. Optimize the resulting AI model for real-time inference on resource constrained computing devices.
+5. Optimize the resulting AI model for real-time inference on resource constrained computing devices targeting under `10Hz` inference period with `5%` acceptable degradation in accuracy.
 
 ## Methodology
 
@@ -60,29 +61,88 @@ South Asian classical music has had a large influence on movie soundtracks, semi
 Often untrained listeners are recommended to hear selected semi-classical pieces before they can appreciate the exclusively classic art form.
 For instance if a movie song has been composed in a particular raag, after listening a human might be able relate it to a sitar only rendering of that raag.
 Can an AI model learn classical music by mimicking this complex process in the human brain? Applied machine learning within music information retrieval domain can broadly be categorized under two approaches, the first relies on the extraction of spectral features like constant-Q transform or MEL Frequency Cepstral Coefficient (MFCC) and using them to train a multilayered convolution network[^16].
-The second approach, after the emergence of large-language models (LLM), is to train a foundation model on large samples of music followed by specialized re-training on a more limited and specific data set[^17].
+The second approach, after the emergence of large-language models (LLM), is to train a foundation model on large samples of music followed by specialized re-training on a more limited and specific data set[^17]. This section covers the methodology of this reasearch proposal also illustrated as an AI pipeline in the diagram below.
+```mermaid
+flowchart TD
+    B[Dataset Construction]
 
+    subgraph B[Dataset Construction]
+        B1[Collect audio: Ghazal, Film Songs,<br>Thumri, Tappa, Qawwali, Kafi]
+        B2[Source: Personal collections,<br>public archives with permissions]
+        B3[Expert annotation: raag, taal, thaath, timestamps]
+        B4[Free-text reasoning from expert]
+        B5[Train/Test split: 80/20]
+        B1 --> B2 --> B3 --> B4 --> B5
+    end
+
+    B --> C[Baseline Evaluation]
+
+    subgraph C[Baseline Evaluation]
+        C1[Evaluate existing South Asian models against new dataset]
+        C2[Extend fine tune models for automatic tagging]
+        C3[Establish baseline F1 scores<br>for raag, thaat, taal]
+        C4[Establish mean average precision for sub-genres]
+        C1 --> C2 --> C3 --> C4
+    end
+
+    C --> D[Model Development & Fusion]
+
+    subgraph D[Model Development & Fusion]
+        D1[Fine-tune western music foundation models<br>on Pakistani semi-classical data]
+        D2[Cross-attention fusion:<br>South Asian + Western embeddings]
+        D3[Multimodal training:<br>align audio + text rationales]
+        D4[Evaluate against baselines metrices]
+        D1 --> D2 --> D3 --> D4
+    end
+
+    D --> E[Explainability]
+
+    subgraph E[Explainability]
+        E1[Extract attention weights<br>from fusion model]
+        E2[Generate timestamped explanations<br>for classification decisions]
+        E3[Expert evaluation of<br>explanation plausibility]
+        E1 --> E2 --> E3
+    end
+
+    E --> F[Optimisation & Deployment]
+
+    subgraph F[Optimisation & Deployment]
+        F1[Quantisation: FP16 → INT8]
+        F2[Pruning / LoRA compression]
+        F3[Deploy on mobile/edge devices]
+        F4[Real-time inference<br>< 500 ms latency]
+        F1 --> F2 --> F3 --> F4
+    end
+
+    F --> G[Evaluation & Dissemination]
+
+    subgraph G[Evaluation & Dissemination]
+        G1[Open-source release:<br>dataset, code, model weights]
+        G2[Conference / Journal publications]
+        G3[Interactive demo]
+        G1 --> G2 --> G3
+    end
+```
+### Dataset Construction
 A common aspect in the exploration of either of these approaches is a dataset representing Pakistani semi-classical music.
 Genres which need to be represented would be e.g. `Ghazals` favorite genre of expressing rich very popular Urdu poetry, movie songs from both Pakistani and Indian films of the 1950s/1960s (where compositions were still rooted into classical music), regional items like `Thumri`, `Tappa` etc. and spiritual music genres like `Qawwali` and `Kafi`.
 In addition to representing the wide semi-classical spectrum, the audio samples should be amenable to experimentation, meaning these are of shorter duration, and there are no copy-right issues involved.
 In line with established AI practices, the music samples will be divided into two parts, recordings where structural information of music is tagged by an expert musicologist serving as training data, while the rest of the samples will constitute a test data-set.
-An example targeting only the Qawwali genre is the Qawwal-Rang dataset[^18]. It would need to be significantly extended to cover other genres mentioned here in addition to labeling them with their melodic properties.
+This proposal aims to collect ground truth not only containing labels/attributes but also free text rationalizing the musical expert's thought process. For each collected sample in the dataset, an expert will provide a verbal timestamped reasoning for his classification decision. These annotations would be transcribed and later used to train the reasoning component of a multimodal model where audio embeddings are aligned with textual rationales.
 
-As a preparatory activity, the Principal Investigator developed a rules based classification method to recognize Qawwali genre[^19].
-Similarity metrics with audio samples in the popular western music dataset GTZAN were also published.
-Afterwards a ResNet18 based convolutional neural network was successfully evaluated with the features from Qawwal-Rang dataset with over 90% accuracy[^20].
-These preliminary activities demonstrate the feasibility of the project as well as the potential of further work in this domain, including tasks such as raag/taal identification, explainability of music for untrained listeners and recommendation systems based on structural similarity.
-To this end focus would be to use semantic information generated by a foundational music information model, and make it learn the note patterns and melodic structures specific to South Asian classical music by adding additional layers or attention heads.
+### Preparations and baseline
+As a preparatory activity, the Principal Investigator developed a rules based classification method to recognize Pakistani semi-classical `Qawwali` genre[^19]. It used the Qawwal-Rang dataset[^16] which is under the process of significant improvements to include other semi-classical genres, with musical attributes and expert annotations.
+Under this activity a similarity study with western music was also conducted. The western audio samples used for similarity evaluation was the popular GTZAN[^20] dataset.
+Afterwards a `ResNet18` based convolutional neural network was successfully evaluated with the features from Qawwal-Rang dataset with over 90% accuracy[^21] to recognize `Qawwali` genre.
+These preliminary activities demonstrate the feasibility of the project as well as the potential of further work in this domain, including tasks such as `raag`, `taal` and `thaat` identification, explainability of music for untrained listeners and recommendation systems based on structural similarity.
 
-Most interesting aspect of the project would be to compare the learning process of a successfully evaluated model with a trained classical musician.
-This research proposal aims to collect ground truth not only containing labels/attributes but also free text rationalizing the musician's thought process.
-This text would be used to train the reasoning part of a multimodal model
-As a result the model will not only learn structural properties of the music samples but would also explain its decision in terms of the timestamps that contributed the most towards a particular tag.
-This explainability part of the model would be most useful for untrained/casual listeners and the main reason for developing an audio-textual AI model.
-It would be particular helpful in automatic tagging of Pakistani classical music where manual expert labeling would be hard to comeby with passage of time.
+### Multimodal (Audio and Textual) Learning
+The project would start by developing an audio only model capable of multiclass detection arcoss melodious (`raag`, `thaat`) and rhythymic (`taal`) attributes. The evaluation criteria for these individual classification tasks would be F1 scores. In the second stage the model would be extended to produce multiple tags against a given audio sample evaluated with mean average precision and ROC charateristics to cover for multi-class imbalance.
+To investigate cross-culture music similarity, the project would be adopt a cross-attention fusion architecture that takes embeddings from a model trained exclusively on South Asian music[^11] and a western music foundation model[^17] to learn a shared representation space. Similarity will be measured via cosine distance in this space and attention weights will serve as a basis of explainability. The explainability part of the model would be most useful for untrained/casual listeners to know which e.g. which `raag` is prominent in a particular melody and serves as a main reason for developing an audio-textual AI model.
 
+### Realtime Inference Optimizations
 This research proposal also envisions development of an efficient inference engine capable of listening to live music or a recording and in real time producing decisions about genres, melodic and temporal structures in Pakistani semi-classical music.
-For this part quantization, finetuning and optimization of the model would be required in order to deploy it on mobile phones or resource constrained devices.
+For this part quantization, finetuning and optimization of the model would be required in order to deploy it on mobile phones or resource constrained devices. Initial target set for this activity is to achieve inference on tagging within `100ms` of listening with tolerated accuracy drop by `5%` compared to running the model on a modern PC with `5` seconds of listening period.
 
 ## Expected Outcomes
 
@@ -102,14 +162,14 @@ Data collected during the course of the project and software developed would be 
 Here exact licensing model would be decided during due course.
 A number of conference and journal publications in well established music information retrieval forums are expected as a result of this research proposal.
 
-## Duration
-The expected duration for data augmentation required to set up the research is expected to take between three to six months.
-Evaluation of existing models, architecture adaptations for semi-classical genre detection is expected to last about six months.
-Three more months are estimated for write up and submissions.
-All estimates are based on availability of a full-time graduate student.
-Once the genre detection project is successfully completed, some of the other tasks described in the research proposal are expected to follow a similar 12 months cycle
-Detailed timeline breakdown could be provided upon request.
-
+## Timeline and Milestones
+Below table provides an estimation of timeline against proposed milestones. These milestones are estimated with a full-time engineer/student working on the project and do not cover possible parallelization in case more resources are available.
+| Phase | Durtation | Activities | Success Criteria |
+|-------|-----------|------------|------------------|
+|1| Months 1-6 | Data set construction; <br> collect ~ 100 hours from more than 5 subgenres with expert annotation | Cross validation and agreement <br> on labeling and annotations|
+|2| Months 7-12 | Baseline models evaluation;<br> Existing south asian models with internal dataset| F1 scores for sub-genre, `thaat`, `raag` and `taal` > 0.85|
+|3| Months 13-18 | Multimodal model development and fusion experimentation | Explainbility score > 80% against expert rating|
+|4| Months 19-24 | Optimization, finetuning and writing | Edge devices inference < `100ms` with accuracy drop tolerance < `5%`|
 ## Bibliography
 [^1]: Kumar Prasad Mukherji, “The lost world of hindustani music”, Oxford University Press, Pakistan 2007.  
 [^2]: Khan Muhammad Afzal, “Tafseel-e-Mausiqi (Explanation of Music)”, Anthology by Shahbaz Ali titled “Kya Soortain Hongi (Those were the Artists)” Sanjh Publications, 2012, Lahore, Pakistan.  
@@ -129,6 +189,7 @@ Detailed timeline breakdown could be provided upon request.
 [^16]: S. Pasrija, S. Sahu and S. Meena, "Audio Based Music Genre Classification using Convolutional Neural Networks Sequential Model," 2023 IEEE 8th International Conference for Convergence in Technology (I2CT), Lonavla, India, 2023, pp. 1-5, doi: 10.1109/I2CT57861.2023.10126446.  
 [^17]: M. Won, Y. -N. Hung and D. Le, "A Foundation Model for Music Informatics," ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Seoul, Korea, Republic of, 2024, pp. 1226-1230, doi: 10.1109/ICASSP48485.2024.10448314.  
 [^18]: Qawwal-Rang [DataSet](https://zenodo.org/records/6408796)     
-[^19]: F. Sheikh, "[Qawwal Rang](https://medium.com/@fahim.sheikh/qawwalrang-a4fc0d2b2b59): An audio dataset for genre recognition of Qawwali"  
-[^20]: Resnet18 based Qawwali [recognition](https://github.com/fsheikh/QawwalRang/pull/6)  
+[^19]: F. Sheikh, "[Qawwal Rang](https://medium.com/@fahim.sheikh/qawwalrang-a4fc0d2b2b59): An audio dataset for genre recognition of Qawwali"
+[^20]: GTZAN [dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) for music genre classification
+[^21]: Resnet18 based Qawwali [recognition](https://github.com/fsheikh/QawwalRang/pull/6)
 
